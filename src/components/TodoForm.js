@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { v4 } from "uuid";
-const TodoForm = ({ setTodos }) => {
+const TodoForm = ({ setTodos, todos }) => {
   const [input, setInput] = useState("");
   const submitHandler = (e) => {
     e.preventDefault();
@@ -11,8 +11,7 @@ const TodoForm = ({ setTodos }) => {
       todo: input,
       id: v4()
     };
-    console.log(todo);
-    setTodos(todo);
+    setTodos([...todos, todo]);
     setInput("");
   };
   return (

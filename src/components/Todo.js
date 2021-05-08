@@ -1,12 +1,12 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
-const Todo = () => {
+const Todo = ({ todo, removeTodo, id }) => {
   return (
     <li>
       <span>
-        <FaTrash className="icon" />
+        <FaTrash className="icon" onClick={() => removeTodo(id)} />
       </span>{" "}
-      Kill Faith Seed
+      {todo}
     </li>
   );
 };
